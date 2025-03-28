@@ -1,0 +1,453 @@
+/* RESET */
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+} 
+:root{
+    --primary-color: #f10f8f;
+    --secondary-color: #424242;
+    --tertiary-color: #0f78f1;
+    --quaternary-color: #ffebf5;
+
+    --primary-font: "Asul", sans-serif;
+    --secondary-font: "Yaldevi", sans-serif;
+}
+
+/* FONTS */
+    /* yaldevi-200 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 200;
+        src: url('../fonts/yaldevi-v12-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* yaldevi-300 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 300;
+        src: url('../fonts/yaldevi-v12-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* yaldevi-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/yaldevi-v12-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* yaldevi-500 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 500;
+        src: url('../fonts/yaldevi-v12-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* yaldevi-600 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 600;
+        src: url('../fonts/yaldevi-v12-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* yaldevi-700 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Yaldevi';
+        font-style: normal;
+        font-weight: 700;
+        src: url('../fonts/yaldevi-v12-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+
+
+
+/* GENERAL */
+html {
+    scroll-behavior: smooth;
+}
+body{
+
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 2rem;
+    padding: 0 5%;
+}
+.one, .two, .three{
+    margin-bottom: 8rem;
+}
+#portfolio, #kontakt {
+    padding-top: 250px; /* Abstand nach oben */
+    margin-top: -200px; /* Verhindert, dass das Padding den Abstand verändert */
+}
+
+.animated-bg {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(270deg, #ffffff,#fdefe8, #fef4f2, #fff1f9);
+    background-size: 400% 400%;
+    animation: gradientMove 60s ease infinite;
+    z-index: -2; /* Stellt sicher, dass der Hintergrund hinter dem Inhalt bleibt */
+}
+/* Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; filter: brightness(1);}
+    50% { background-position: 100% 50%; filter: brightness(1.5) }
+    100% { background-position: 0% 50%; filter: brightness(1); }
+}
+
+/* TYPO */
+body{
+    font-size: 18px;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 0.5rem;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+}
+p{
+    font-size: 1rem;
+}
+.main-nav a{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.one-1 h3{
+    font-size: 3.5rem;
+    font-weight: 200;
+}
+.one-2 h1{
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    font-weight: 600;
+}
+.one-2 p{
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.work h3{ 
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    font-family: var(--secondary-font);
+    font-weight: 200;
+}
+.three form{
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+footer p{
+    font-size: 0.9rem;
+}
+.pink{
+    color: var(--primary-color);
+}
+
+/* ANIMATION */
+        /* LINKS */
+a {
+    text-decoration: none; 
+    color: var(--secondary-color); 
+    position: relative;
+}
+a:hover {
+    color: var(--primary-color);
+}
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+}
+a:hover::after {
+    width: 100%;
+}
+@media (hover: none) {
+    a::after {
+        width: 100%; /* Unterlinie immer anzeigen */
+    }
+}
+    /* BUTTONS */
+button {
+    padding: 1.2rem 3rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    font-size: 1.5rem;
+}
+button:hover {
+    background-color: var(--tertiary-color);
+}
+    /* AUTO SHOW*/
+    .autoshow {
+        -webkit-animation: autoShowAnimation 0.3s ease-out both;
+        animation-timeline: view(50% 0%);
+    }
+    
+    @-webkit-keyframes autoShowAnimation {
+        from {
+            opacity: 0.8;  
+            transform: translateY(10px) scale(0.60);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    /* STICKY */
+    .sticky-text {
+        position: sticky;
+        top: 30vh;
+    }
+
+
+/* NAVIGATION */
+.main-nav ul {
+    list-style: none; 
+    display: flex; 
+    justify-content: right; 
+    padding: 0 5%;
+    margin: 2rem 0; 
+}
+.main-nav li {
+    margin: 0 1.5rem; 
+}
+.main-nav li:last-child{
+    margin-right: 0rem; 
+}
+
+/* HOME */
+.one{
+    grid-row: 1;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-gap: inherit;
+    z-index: 2;
+}
+.one-1{
+    grid-row: 1;
+    grid-column: 1/8;
+    grid-gap: inherit;
+    padding-top: 30vh;
+    padding-bottom: 10vh;
+    height: 100vh;
+}
+.one-2{
+    grid-row: 2;
+    grid-column: 2/9;
+    grid-gap: inherit;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 50px 0px 50px 0px;
+    box-shadow: 0 0 15px rgba(82, 63, 78, 0.1);
+}
+.one-foto{
+    z-index: -1;
+    grid-row: 1/4;
+    grid-column: 6/13;
+    padding-top: 5rem;
+}
+.one-foto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(117, 117, 117, 0.2);
+    border-radius: 0px 50px 0px 50px;
+}
+
+/* WORK // Portfolio */
+.two{
+    display: grid;
+    grid-row: 2;
+    grid-column: span 12;
+    grid-template-columns: subgrid;
+    grid-gap: inherit;
+    justify-items: center;
+}
+.two h2{
+    grid-column: span 12;
+    text-align: center;
+}
+.work-container{
+    display: grid;
+    grid-column: span 12;
+    grid-template-columns: subgrid;
+    grid-gap: inherit;
+    align-items: stretch;
+}
+.work{
+    grid-column: span 4;
+}
+.work img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.work img:hover{
+    box-shadow: 0 0 20px rgba(42, 42, 42, 0.3);
+}
+
+/* CONTACT */
+.three{
+    grid-row: 3;
+    grid-column: 1/13;
+    justify-items: center;
+    display: grid;
+}
+    /* FORMULAR */
+.three form{
+    width: 80vw;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.three form input{
+    border: none;
+    height: 1.5rem;
+    background-color: var(--quaternary-color);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+.three form ::placeholder{
+    color: var(--tertiary-color);
+    font-family: var(--secondary-font);
+    text-align: center;
+    font-size: 1rem;
+}
+.three button{
+    margin-top: 2rem;
+}
+
+/* FOOTER */
+footer{
+    grid-row: 4;
+    grid-column: 1/13;
+    text-align: center;
+}
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 2rem;
+}
+footer div p{
+    margin: 0 1rem;
+}
+footer div p:last-child{
+    margin-right: 0rem; 
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1440px) {
+    main{
+        padding: 0 12%;
+    }
+    .main-nav ul {
+        padding: 0 12%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .work{
+        justify-items: center;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: span 6;
+    }
+    .work figure, .work h3{
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 640px) {
+    main{
+        padding: 0 1rem;
+    }
+    .work-container {
+        grid-template-columns: 1fr;
+    }
+    .main-nav ul {
+        justify-content: center; 
+        padding: 0 5%;
+        margin: 2rem 0; 
+    }
+
+    .one-1{
+        margin-bottom: 10rem;
+    }
+
+    .one-1 h3{
+        font-size: 2.2rem;
+        font-weight: 200;
+    }
+    .one-2 h1{
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .one-2 p{
+        font-family: var(--secondary-font);
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    .one{
+        margin-bottom: -5rem;
+    }
+    .two{
+        margin-bottom: 17rem;
+    }
+    .three{
+        text-align: center;
+    }
+    .three form{
+        width: 95vw;
+    }
+        /* AUTO SHOW*/
+        .autoshow {
+            animation: autoShowAnimation 0.3s ease-out both;
+            animation-timeline: view(50% 0%);
+        }
+        
+        @keyframes autoShowAnimation {
+            from {
+                opacity: 1;  
+                transform: translateY(-300px) scale(0.6);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+        }
+}
